@@ -1,4 +1,5 @@
 import React,{useState,useEffect} from 'react'
+import { useCallback } from 'react';
 import { useParams } from 'react-router-dom'
 
 function Product() {
