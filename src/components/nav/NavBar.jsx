@@ -22,6 +22,9 @@ function NavBar() {
         <li className="nav-item">
           <Link className="nav-link" to ='/shop'>Shop</Link>
         </li>
+        <li className="nav-item">
+          <Link className="nav-link" to ='/todo'>TodoRedux</Link>
+        </li>
 
       
        
