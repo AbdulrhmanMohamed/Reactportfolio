@@ -9,6 +9,7 @@ function Registeration() {
         password: '',
         confirmed: ''
     })
+    console.log('errors',errors)
     const submitForm = (data) => {
         console.log('formSubmitted')
         console.log(data);
@@ -50,7 +51,7 @@ function Registeration() {
                 <form className="form p-4" onSubmit={handleSubmit(submitForm)}>
 
 
-                    <div className="form-group my-3" >
+                    <div className="form-group my-2" >
 
                         <label htmlFor='userName'
                             style={
@@ -74,7 +75,7 @@ function Registeration() {
                                 }
                             } {...register("user_name", { required: true })} />
                     </div>
-                    <div className="form-group my-3" >
+                    <div className="form-group my-2" >
                         <label htmlFor='email'
                             style={
                                 {
@@ -85,7 +86,7 @@ function Registeration() {
                             } >
                             email:
                             <br />
-                            {errors.email?.type == 'pattern' && <span className='mt-2 text-danger'>*Invlide email</span>}
+                            {confirm.password !=confirm.confirmed && <span className='mt-2 text-danger'>*Invlide email</span>}
                         </label>
                         <input type="email" className="form-control"
                             style={
@@ -98,19 +99,34 @@ function Registeration() {
                             } {...register('email', { pattern: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/ })} />
                     </div>
 
-
-                    <Controller className='my-4 controller' style={{margin:'40px 0'}}
-                        name="select"
+                            <br />
+                    <Controller className=' controller' style={{margin:'40px 0'}}
+                        name="gender"
                         control={control}
-                        render={({ field }) => <Select
+                        render={({ field }) => <Select placeholder='Gender'
                             {...field}
                             options={[
-                                { value: "chocolate", label: "Chocolate" },
-                                { value: "strawberry", label: "Strawberry" },
-                                { value: "vanilla", label: "Vanilla" }
+                                { value: "Male", label: "Male" },
+                                { value: "FeMale", label: "FeMale" },
+                                
                             ]}
                         />} />
-                    <div className="form-group my-3" >
+
+<br />
+<Controller className=' controller' style={{margin:'40px 0'}}
+                        name="Hobbies"
+                        control={control}
+                        render={({ field }) => <Select isMulti name='hoppies' placeholder='Hoppies'
+                            {...field}
+                            options={[
+                                { value: "Reading", label: "Reading" },
+                                { value: "Walking", label: "Walking" },
+                                { value: "Watching Movies", label: "Watching Movies" }
+                            ]}
+                        />} />
+
+
+                    <div className="form-group my-2" >
                         <label htmlFor='password'
                             style={
                                 {
@@ -134,7 +150,7 @@ function Registeration() {
                                 }
                             } {...register('password', { required: true, maxLength: 20 })} />
                     </div>
-                    <div className="form-group my-3" >
+                    <div className="form-group my-2" >
                         <label htmlFor='confirmPassword'
 
                             style={
