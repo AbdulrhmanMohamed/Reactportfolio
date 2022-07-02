@@ -4,10 +4,10 @@ function FormTodo({AddTodo}) {
     const [title,setTitle]=useState('');
     const [description,setDescription]=useState('');
   const  submitFun=(e)=>{
+        document.querySelector('input').value=''
+        document.querySelector('textarea').value=''
         e.preventDefault();
-        console.log('submitted')
-        console.log(title)
-        console.log(description)
+       
         AddTodo({title,description})
     }
 
@@ -18,7 +18,7 @@ function FormTodo({AddTodo}) {
     <legend className='text-center'>  TODO LIST</legend>
     <div className="mb-3">
       <label htmlFor="disabledTextInput" className="form-label">The Title of The Todo</label>
-      <input  type="text" id="disabledTextInput"  onChange={(e)=>setTitle(e.target.value)} className="form-control" placeholder="Disabled input"/>
+      <input  type="text" id="disabledTextInput"  onChange={(e)=>{setTitle(e.target.value)}} className="form-control" placeholder="Enter Your Task Title"/>
     </div>
 
     <div className="mb-3">

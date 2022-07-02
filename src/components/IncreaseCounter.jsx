@@ -1,7 +1,9 @@
 import {React,useState} from 'react'
 
-function IncreaseCounter({counterFun,countVal}) {
 
+import { useDispatch } from 'react-redux';
+function IncreaseCounter({counterFun,countVal}) {
+  const useDisp=useDispatch();
 
 
 

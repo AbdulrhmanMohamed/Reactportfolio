@@ -20,10 +20,10 @@ function NavBar() {
           <Link className="nav-link active" aria-current="page" to ='/home'>Home</Link>
         </li>
         <li className="nav-item">
-          <Link className="nav-link" to ='/shop'>Shop</Link>
+          <Link className="nav-link" to ='/shop'>ShopReactThunk</Link>
         </li>
         <li className="nav-item">
-          <Link className="nav-link" to ='/todo'>TodoRedux</Link>
+          <Link className="nav-link" to ='/todo'>TodoReduxToolKit</Link>
         </li>
 
       

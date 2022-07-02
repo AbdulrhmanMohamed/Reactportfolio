@@ -8,21 +8,24 @@ import Product from './pages/shop/Product';
 import NavBar from './components/nav/NavBar';
 import NotFound from './pages/NotFound/NotFound';
 import Todo from './pages/todo/Todo';
+import Registeration from './pages/registeration/Registeration';
 function App() {
-  let count=0; 
+  
   return (
     <BrowserRouter>
 
     <NavBar/>
 
       <Routes>
-        <Route path='/counter' element={<Count counter={count}/>}/>
+        <Route path= '/' element={<Home/>}/>
+        <Route path='/counter' element={<Count />}/>
         <Route path='/home' element={<Home/>}/>
         <Route path='/about' element={<About/>}/>
         <Route path='/shop' element={<Shop/>}/>
         <Route path='/shop/:id' element={<Product/>}/>
         <Route path='*' element={<NotFound/>}/>
         <Route path='/todo' element={<Todo/>}/>
+        <Route path="/register" element={<Registeration></Registeration>}/>
 
       </Routes>
     </BrowserRouter>

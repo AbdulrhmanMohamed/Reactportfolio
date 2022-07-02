@@ -2,7 +2,8 @@ import React,{useState} from 'react'
 import { useSelector ,useDispatch} from 'react-redux'
 import FormList from '../../components/todo/FormList';
 import FormTodo from '../../components/todo/FormTodo';
-import { addTodoAction ,deletTodoAction} from '../../reduxStore';
+// import { addTodoAction ,deletTodoAction} from '../../reduxStore';
+import { addTodo,deleteTodo } from '../../reduxStore/features/todo.slice';
 function Todo() {
   
  const useDisp=useDispatch();
@@ -13,13 +14,13 @@ function Todo() {
 
   const AddTodo=(task)=>{
     console.log(task)
-    useDisp(addTodoAction(task))
+    useDisp(addTodo(task))
    
 
 
   }
   const DeleteTodo=(index)=>{
-    useDisp(deletTodoAction(index))
+    useDisp(deleteTodo(index))
   }
  
   
@@ -29,7 +30,7 @@ function Todo() {
     <div className="row justify-content-center">
       <div className="col-lg-8">
       <FormTodo AddTodo={AddTodo}/>
-      <FormList DeleteTodo={DeleteTodo}/>
+      <FormList DeleteTodo={DeleteTodo} />
 
       </div>
     </div>

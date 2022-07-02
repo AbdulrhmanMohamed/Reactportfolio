@@ -5,6 +5,7 @@ import { useParams } from 'react-router-dom'
 function Product() {
     const urlParams=useParams();
     const [product,setProduct]=useState({});
+    
 
     useEffect(() => {
         fetchSignleProduct();
